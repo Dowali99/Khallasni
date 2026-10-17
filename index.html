@@ -1,4 +1,6 @@
-<html lang="ar" dir="rtl"><head>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#101827">
@@ -361,13 +363,9 @@ hr{border:0;border-top:1px solid var(--line);margin:17px 0}
 @media(max-width:380px){.two{grid-template-columns:1fr}}
 </style>
 
-<link rel="manifest" href="./manifest.json">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#4b6cb7">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<link rel="apple-touch-icon" href="icon.png">
-</head>
+<link rel="apple-touch-icon" href="icon.png"></head>
 
 <body>
 <div class="container">
@@ -423,12 +421,13 @@ hr{border:0;border-top:1px solid var(--line);margin:17px 0}
     <form id="debtForm">
       <div class="field">
         <label for="person">اسم الشخص أو المحل *</label>
-        <input id="person" required="" maxlength="100" placeholder="مثال: محمد، محل المواد الغذائية">
+        <input id="person" required maxlength="100"
+          placeholder="مثال: محمد، محل المواد الغذائية">
       </div>
 
       <div class="field">
         <label for="type">نوع الدين *</label>
-        <select id="type" required="">
+        <select id="type" required>
           <option value="owe">يسالني</option>
           <option value="get">نسالو</option>
         </select>
@@ -437,38 +436,45 @@ hr{border:0;border-top:1px solid var(--line);margin:17px 0}
       <div class="two">
         <div class="field">
           <label for="amount">المبلغ الإجمالي (دج) *</label>
-          <input id="amount" type="number" min="1" step="0.01" required="" placeholder="10000">
+          <input id="amount" type="number" min="1" step="0.01"
+            required placeholder="10000">
         </div>
         <div class="field">
           <label for="paid">المبلغ المدفوع (دج)</label>
-          <input id="paid" type="number" min="0" step="0.01" value="0" required="">
+          <input id="paid" type="number" min="0" step="0.01"
+            value="0" required>
         </div>
       </div>
 
       <div class="field">
         <label for="date">تاريخ الدين</label>
-        <input id="date" type="text" maxlength="30" placeholder="مثال: 15/03/2025 أو 15 مارس">
+        <input id="date" type="text" maxlength="30"
+          placeholder="مثال: 15/03/2025 أو 15 مارس">
       </div>
 
       <div class="field">
         <label for="due">آخر أجل للتسديد أو القبض</label>
-        <input id="due" type="text" maxlength="30" placeholder="مثال: آخر الشهر، 30/04/2025">
+        <input id="due" type="text" maxlength="30"
+          placeholder="مثال: آخر الشهر، 30/04/2025">
       </div>
 
       <div class="field">
         <label for="phone">رقم الهاتف (اختياري)</label>
-        <input id="phone" type="tel" maxlength="30" placeholder="05 أو 06 أو 07...">
+        <input id="phone" type="tel" maxlength="30"
+          placeholder="05 أو 06 أو 07...">
       </div>
 
       <div class="field">
         <label for="notes">ملاحظات أو تفاصيل الاتفاق</label>
-        <textarea id="notes" maxlength="1000" placeholder="مثال: السلعة، تاريخ الاتفاق، الأقساط..."></textarea>
+        <textarea id="notes" maxlength="1000"
+          placeholder="مثال: السلعة، تاريخ الاتفاق، الأقساط..."></textarea>
       </div>
 
       <button class="btn primary full" type="submit" id="saveBtn">
         حفظ الدين
       </button>
-      <button class="btn secondary full hidden" type="button" id="cancelEdit" style="margin-top:8px">إلغاء التعديل</button>
+      <button class="btn secondary full hidden" type="button"
+        id="cancelEdit" style="margin-top:8px">إلغاء التعديل</button>
     </form>
   </section>
 
@@ -485,7 +491,8 @@ hr{border:0;border-top:1px solid var(--line);margin:17px 0}
     </div>
 
     <div class="toolbar">
-      <input type="search" id="search" placeholder="🔍 ابحث باسم الشخص أو الملاحظات...">
+      <input type="search" id="search"
+        placeholder="🔍 ابحث باسم الشخص أو الملاحظات...">
       <select id="sort">
         <option value="new">الأحدث أولاً</option>
         <option value="old">الأقدم أولاً</option>
@@ -509,10 +516,11 @@ hr{border:0;border-top:1px solid var(--line);margin:17px 0}
 <!-- Fixed circular basket button -->
 <button id="basketFab" type="button" aria-label="سلة الديون">
   <span class="fab-tooltip" id="fabTooltip">سلة الديون</span>
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="9" cy="21" r="1"></circle>
-    <circle cx="20" cy="21" r="1"></circle>
-    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="9" cy="21" r="1"/>
+    <circle cx="20" cy="21" r="1"/>
+    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
   </svg>
   <span class="badge-dot" id="basketBadge">0</span>
 </button>
@@ -531,11 +539,12 @@ hr{border:0;border-top:1px solid var(--line);margin:17px 0}
 <!-- PDF toast -->
 <div id="pdfToast">
   <button class="pdf-icon-btn" id="pdfBtn" type="button" title="تحميل PDF">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-      <polyline points="14 2 14 8 20 8"></polyline>
-      <line x1="12" y1="18" x2="12" y2="12"></line>
-      <polyline points="9 15 12 18 15 15"></polyline>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+      <polyline points="14 2 14 8 20 8"/>
+      <line x1="12" y1="18" x2="12" y2="12"/>
+      <polyline points="9 15 12 18 15 15"/>
     </svg>
     تحميل PDF
   </button>
@@ -556,11 +565,14 @@ hr{border:0;border-top:1px solid var(--line);margin:17px 0}
     <div id="loginBody">
       <div class="field">
         <label for="loginPhone">رقم الهاتف *</label>
-        <input id="loginPhone" type="tel" maxlength="20" placeholder="05xxxxxxxx أو 06xxxxxxxx أو 07xxxxxxxx" style="text-align:center;font-size:16px;letter-spacing:1px">
+        <input id="loginPhone" type="tel" maxlength="20"
+          placeholder="05xxxxxxxx أو 06xxxxxxxx أو 07xxxxxxxx"
+          style="text-align:center;font-size:16px;letter-spacing:1px">
       </div>
       <div class="field">
         <label for="loginName">اسمك (اختياري)</label>
-        <input id="loginName" type="text" maxlength="40" placeholder="مثال: أحمد">
+        <input id="loginName" type="text" maxlength="40"
+          placeholder="مثال: أحمد">
       </div>
       <button class="phone-btn" id="phoneLoginBtn" type="button">
         🔓 دخول برقم الهاتف
@@ -1114,6 +1126,8 @@ function generatePDF(d) {
   <script>
     window.onload = function(){ setTimeout(function(){ window.print(); }, 300); };
   <\/script>
+
+<script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js'));}</script>
 </body>
 </html>`;
 
@@ -1148,15 +1162,5 @@ renderAccount();
 render();
 updateBasketBadge();
 </script>
-
-
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('./sw.js')
-        .then(reg => console.log('Service Worker enregistré !'))
-        .catch(err => console.error('Erreur SW :', err));
-    });
-  }
-</script>
-</body></html>
+</body>
+</html>
