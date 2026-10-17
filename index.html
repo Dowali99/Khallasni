@@ -142,7 +142,7 @@ hr{border:0;border-top:1px solid var(--line);margin:17px 0}
   font-size:20px;line-height:1;padding:4px 8px;cursor:pointer
 }
 
-/* ===== FIXED CIRCULAR BASKET ===== */
+/* Fixed circular basket */
 #basketFab{
   position:fixed;bottom:24px;left:24px;
   width:64px;height:64px;border-radius:50%;
@@ -1136,19 +1136,28 @@ function generatePDF(d) {
   w.document.close();
 }
 
+/* ---------- PDF toast ---------- */
 function showPdfToast() {
   const toast = $("pdfToast");
   toast.classList.add("show");
   clearTimeout(showPdfToast._t);
   showPdfToast._t = setTimeout(() => toast.classList.remove("show"), 8000);
 }
-$("pdfClose").addEventListener("click", () => $("pdfToast").classList.remove("show"));
-$("pdfBtn").addEventListener("click", () => {
-  const d = debts.find(x => x.id === lastSavedId);
-  if (d) generatePDF(d);
-  else alert("ما لقيتش السجل الأخير، جرّب من زر PDF في القائمة.");
+
+$("pdfClose").addEventListener("click", () => {
+  $("pdfToast").classList.remove("show");
 });
 
+$("pdfBtn").addEventListener("click", () => {
+  const d = debts.find(x => x.id === lastSavedId);
+  if (d) {
+    generatePDF(d);
+  } else {
+    alert("ما لقيتش السجل الأخير، جرّب من زر PDF في القائمة.");
+  }
+});
+
+/* ---------- Init ---------- */
 renderAccount();
 render();
 updateBasketBadge();
