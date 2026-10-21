@@ -275,21 +275,23 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebas
 import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 import { getFirestore, collection, addDoc, getDocs, updateDoc, deleteDoc, doc, query, orderBy } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
+// ⚠️ الإعدادات الجديدة الخاصة بك
 const firebaseConfig = {
-    apiKey: "AIzaSyA5EWW40Dx_DmS7HNKTs0UiBdUdQ2MQ6Rw",
-    authDomain: "khallassni-321df.firebaseapp.com",
-    projectId: "khallassni-321df",
-    storageBucket: "khallassni-321df.firebasestorage.app",
-    messagingSenderId: "296864721769",
-    appId: "1:296864721769:web:f0b695947de08c0c216bf8",
-    measurementId: "G-13VN355PSB"
+  apiKey: "AIzaSyA5EWW40Dx_DmS7HNKTs0UiBdUdQ2MO6Rw",
+  authDomain: "khallasni-321df.firebaseapp.com",
+  databaseURL: "https://khallasni-321df-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "khallasni-321df",
+  storageBucket: "khallasni-321df.firebasestorage.app",
+  messagingSenderId: "296864721769",
+  appId: "1:296864721769:web:f0b695947de08c0c216bf8",
+  measurementId: "G-13VN355PSB"
 };
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// ⚠️ إيميلك الجديد كأدمن
+// إيميل الأدمن الخاص بك
 const ADMIN_EMAIL = "dowaliabdelaziz@gmail.com"; 
 
 const TYPES = ["owe", "get", "versement"];
